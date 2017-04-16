@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <% include ../partials/head %>
+   </head>
+   <body>
+      <header>
+         <nav>
+            <% include ../partials/nav %>
+         </nav>
+      </header>
+      <main>
+         <div>
+            <h2><%=systemsArr.name%></h2>
+            <img src="<%=systemsArr.img%>" alt="">
+         </div>
+         <hr>
+         <div class="stats">
+            <h2>System Stats</h2>
+            <h3 class="logo">Logo: <img src="<%=systemsArr.logo%>" alt=""></h3>
+            <h3>Brand: <%=systemsArr.brand%></h3>
+         </div>
+         <hr>
+         <div class="available-games">
+            <h2>Available Games</h2>
+         </div>
+      </main>
+   </body>
+</html>

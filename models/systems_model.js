@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var systemSchema = mongoose.Schema({
    name: {type:String, required:true, unique:true},
    brand: String,
-   releastDate: Date,
+   releaseDate: Date,
    logo: {type:String, required:true},
    img: {type:String, required:true},
    games:[]

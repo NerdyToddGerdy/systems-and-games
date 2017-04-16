@@ -19,6 +19,14 @@ router.get('/new',function(req, res){
    res.render('systems/systems_new.ejs');
 });
 
+router.get('/:id', function(req, res){
+   System.findById(req.params.id, function(err, foundSystems){
+      res.render('systems/systems_show.ejs', {
+         systemsArr: foundSystems
+      });
+   });
+});
+
 //----------------------------------------------------------------
                         //Post Routes
 //----------------------------------------------------------------
