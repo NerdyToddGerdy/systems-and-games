@@ -20,10 +20,14 @@
             <h3 class="logo">Logo: <img src="<%=systemsArr.logo%>" alt=""></h3>
             <h3>Brand: <%=systemsArr.brand%></h3>
          </div>
+         <a href="/systems/edit/<%=systemsArr._id%>">Edit this page</a>
          <hr>
          <div class="available-games">
             <h2>Available Games</h2>
          </div>
+         <form class="delete" action="/systems/<%=systemsArr._id%>?_method=DELETE" method="post">
+            <input type="submit" name="" value="Delete This System"/>
+         </form>
       </main>
    </body>
 </html>

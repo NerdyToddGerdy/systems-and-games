@@ -19,6 +19,14 @@ router.get('/new',function(req, res){
    res.render('systems/systems_new.ejs');
 });
 
+router.get('/edit/:id', function(req, res){
+   System.findById(req.params.id, function(req, foundSystems){
+      res.render('systems/systems_edit.ejs', {
+         systemsArr: foundSystems
+      });
+   });
+});
+
 router.get('/:id', function(req, res){
    System.findById(req.params.id, function(err, foundSystems){
       res.render('systems/systems_show.ejs', {
@@ -32,6 +40,24 @@ router.get('/:id', function(req, res){
 //----------------------------------------------------------------
 router.post('/', function(req, res){
    System.create(req.body, function(err, createdSystem){
+      res.redirect('/systems');
+   });
+});
+
+//----------------------------------------------------------------
+                        //Put Routes
+//----------------------------------------------------------------
+router.put('/:id', function(req, res){
+   System.findByIdAndUpdate(req.params.id, req.body, function(){
+      res.redirect('/systems');
+   });
+});
+
+//----------------------------------------------------------------
+                        //Delete Routes
+//----------------------------------------------------------------
+router.delete('/:id', function(req, res){
+   System.findByIdAndRemove(req.params.id, function(err, foundSystems){
       res.redirect('/systems');
    });
 });
