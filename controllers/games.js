@@ -37,16 +37,28 @@ router.get('/:id', function(req, res){
 router.post('/', function(req, res){
    System.find({}, function(err, foundSystem){
       // console.log(foundSystem);
-      console.log(req.body);
+      console.log(req.body.systemId);
       Game.create(req.body, function(err, createdGame){
          // console.log();
          // res.send(req.body);
-         for (var i = 0; i < req.body.systemId.length; i++) {
-            foundSystem.games.push(createdGame);
-            foundSystem.save(function(err, savedSystem){
+            // if (req.body.systemId[i].checked === 'on') {
+               // console.log(req.body.systemId.checked);
+               for (var j = 0; j < foundSystem.length; j++) {
+                  for (var i = 0; i < req.body.systemId.length; i++) {
+                     if (foundSystem[j].name === req.body.systemId[i]) {
+                        foundSystem[j].games.push(createdGame);
+                        console.log(foundSystem[j].games);
+                        foundSystem[j].save(function(err, savedSystem){
+                        });
+                     }
+                  }
+               }
                res.redirect('/games');
-            });
-         }
+
+
+            // foundSystem.games.push(createdGame);
+
+         // }
       });
    });
 });
