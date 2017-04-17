@@ -1,0 +1,31 @@
+name: Xbox One
+
+brand: Microsoft
+
+releaseDate: November 22, 2013
+
+logo: http://www.popsci.com/sites/popsci.com/files/styles/large_1x_/public/xboxone_rgbko_stacked.jpg?itok=rzRSTtgp&fc=50,50
+
+img:
+http://compass.xbox.com/assets/2d/0c/2d0c0efa-7d89-4969-b74d-214126888908.jpg?n=Xbox_Console_MeetOne_DESKTOP_ImageModule_XBOXONE.jpg
+
+games:
+
+
+Game
+
+title: Tom Clancy's The Division
+
+releaseDate: 8 March 2016
+
+Genre: Action role-playing
+
+msrp: RP
+
+Image: https://upload.wikimedia.org/wikipedia/en/0/03/The_Division_box.jpg
+
+systems: []
+
+
+<label for="systems"> <%=sytemsArr[i].name%>
+                  <input type="checkbox" name="<%=sytemsArr[i].name%>" value="<%=sytemsArr[i].name%>" id="<%=sytemsArr[i].name%>">

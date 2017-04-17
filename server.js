@@ -3,12 +3,14 @@ var app = express();
 var mongoose = require('mongoose');
 var serve = require('express-static');
 var systemsController = require('./controllers/systems.js');
+var gamesController = require('./controllers/games.js');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended:false}));
 app.use('/systems', systemsController);
+app.use('/games', gamesController);
 app.use(express.static('public'));
 
 app.get('/', function(req, res){

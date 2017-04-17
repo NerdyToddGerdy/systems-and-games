@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <% include ../partials/head %>
+   </head>
+   <body>
+      <header>
+         <nav>
+            <% include ../partials/nav %>
+         </nav>
+      </header>
+      <main>
+         <a href="/"><h2>🔙</h2></a>
+         <h1>List of games</h1>
+         <ul>
+            <% for(var i = 0; i < gamesArr.length; i++){ %>
+               <li>
+                  <a href="/games/<%=gamesArr[i]._id;%>"><img src="<%=gamesArr[i].img;%>" alt=""><br/>
+                     <%=gamesArr[i].name%>
+               </a>
+               </li>
+            <% } %>
+         </ul>
+         <a href="/games/new">Add another game</a>
+      </main>
+   </body>
+</html>
