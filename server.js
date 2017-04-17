@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
 var port = process.env.PORT || 3000;
+var mongoDBURI = process.env.mongoDBURI || 'mongodb://localhost:27107/gaming';
 
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended:false}));
