@@ -7,6 +7,8 @@ var gamesController = require('./controllers/games.js');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
+var port = process.env.PORT || 3000;
+
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended:false}));
 app.use('/systems', systemsController);
@@ -17,12 +19,12 @@ app.get('/', function(req, res){
    res.render('index.ejs');
 });
 
-mongoose.connect('mongodb://localhost:27017/gaming');
+mongoose.connect(mongoDBURI);
 
 mongoose.connection.once('open', function(){
    console.log('Mongo! Santa Maria!!');
 });
 
-app.listen(3000, function(){
-   console.log('Let the games begin!');
+app.listen(port, function(){
+   console.log('Listening on port:' + port);
 });
