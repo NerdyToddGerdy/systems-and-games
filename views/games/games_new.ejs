@@ -17,14 +17,16 @@
             MSRP: <input type="text" name="msrp" value=""><br/>
             Image: <input type="text" name="img" value="*required*"></br>
             Systems:
-
-               <% for(i = 0; i < systemsArr.length; i++){ %>
-                  <label for="systems"><%=systemsArr[i].name%>
-                     <input type="checkbox" name="<%=systemsArr[i]._id%>" value="<%=systemsArr[i].name%>">
-                  </label>
+               <!-- <select name="systemId"> -->
+               <% for(var i = 0; i < systemsArr.length; i++){ %>
+                     <label for="systemId"><%=systemsArr[i].name%>
+                        <input type="checkbox" name="systemId" value="<%=systemsArr[i].name%>">
+                     </label>
                <% } %>
+            <!-- </select> -->
                <input type="submit" name="" value="Add Game">
          </form>
+         //add a system  
       </main>
    </body>
 </html>

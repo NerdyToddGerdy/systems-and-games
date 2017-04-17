@@ -29,3 +29,10 @@ systems: []
 
 <label for="systems"> <%=sytemsArr[i].name%>
                   <input type="checkbox" name="<%=sytemsArr[i].name%>" value="<%=sytemsArr[i].name%>" id="<%=sytemsArr[i].name%>">
+
+
+                  
+
+                  <% for(i = 0; i < systemsArr.length; i++){ %>
+                     <option value="<%=systemsArr[i].id%>"><%=systemsArr[i].name%></option>
+                  <% } %>
