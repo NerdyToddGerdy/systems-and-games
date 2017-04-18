@@ -57,7 +57,7 @@ router.put('/:id', function(req, res){
                         //Delete Routes
 //----------------------------------------------------------------
 router.delete('/:id', function(req, res){
-   System.findByIdAndRemove(req.params.id, function(err, foundSystems){
+   System.findByIdAndRemove(req.params.id, function(err, foundSystem){
       res.redirect('/systems');
    });
 });

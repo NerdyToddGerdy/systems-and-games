@@ -61,10 +61,10 @@ router.get('/:id', function(req, res){
 //----------------------------------------------------------------
 router.post('/', function(req, res){
    System.find({}, function(err, foundSystem){
-      console.log(">>>>>>>>>>>>>>>>>>>>>>");
-      console.log(foundSystem);
-      console.log(req.body.systems);
-      console.log(">>>>>>>>>>>>>>>>>>>>>>");
+      // console.log(">>>>>>>>>>>>>>>>>>>>>>");
+      // console.log(foundSystem);
+      // console.log(req.body.systems);
+      // console.log(">>>>>>>>>>>>>>>>>>>>>>");
       Game.create(req.body, function(err, createdGame){
          console.log(req.body);
          for (var j = 0; j < foundSystem.length; j++) {
