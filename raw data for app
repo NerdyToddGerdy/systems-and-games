@@ -11,6 +11,8 @@ http://compass.xbox.com/assets/2d/0c/2d0c0efa-7d89-4969-b74d-214126888908.jpg?n=
 
 games:
 
+   <a href="/systems/<%=systemsArr._id%>"><img src="<%=systemsArr.logo%>" alt=""></a>
+
 
 Game
 
@@ -31,7 +33,7 @@ systems: []
                   <input type="checkbox" name="<%=sytemsArr[i].name%>" value="<%=sytemsArr[i].name%>" id="<%=sytemsArr[i].name%>">
 
 
-                  
+
 
                   <% for(i = 0; i < systemsArr.length; i++){ %>
                      <option value="<%=systemsArr[i].id%>"><%=systemsArr[i].name%></option>

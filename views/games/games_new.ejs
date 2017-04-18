@@ -20,13 +20,13 @@
                <!-- <select name="systemId"> -->
                <% for(var i = 0; i < systemsArr.length; i++){ %>
                      <label for="systemId"><%=systemsArr[i].name%>
-                        <input type="checkbox" name="systemId" value="<%=systemsArr[i].name%>">
+                        <input type="checkbox" name="systems" value="<%=systemsArr[i]._id%>">
                      </label>
                <% } %>
             <!-- </select> -->
                <input type="submit" name="" value="Add Game">
          </form>
-         //add a system  
+         //add a system
       </main>
    </body>
 </html>
