@@ -131,27 +131,45 @@ router.post('/', function(req, res){
 //----------------------------------------------------------------
 
 router.delete('/:id', function(req, res){
-   System.find({}, function(err, foundSystems){
-      Game.findByIdAndRemove(req.params.id, function(err, foundGame){
-         for (var i = 0; i < foundSystems.length; i++) {
-            for (var j = 0; j < foundSystems[i].games.length; j++) {
-            console.log('******',foundSystems[i],'******');
-            console.log('foundSystems');
-            console.log('>>>>>>',foundSystems[i].games[j],'<<<<<<');
-            console.log('games');
-            console.log('^^^^^^',foundSystems[i].games[j].title,'^^^^^^');
-            console.log(req.params.id);
-
+   console.log("################ DELETE #####################");
+   Game.findByIdAndRemove(req.params.id, function(err, foundGame){
+      System.find({}, function(err, foundSystems){
+         console.log(foundGame.systems[0], 'foundGame****');
+         console.log(foundSystems[0].id, 'foundSystems.id$$$$$$');
+         console.log(foundGame.systems[0] == foundSystems[0].id);
+         for (var i = 0; i < foundGame.systems.length; i++) {
+            for (var j = 0; j < foundSystems.length; j++) {
+               if (foundGame.systems[i] == foundSystems[j].id) {
+                  for (var k = 0; k < foundSystems[j].games.length; k++) {
+                     console.log('+++++++++++++++++++++++++++++++++++++++++++',foundSystems[j].games[k]);
+                     console.log('-------------------------------------------',foundSystems[j].games[k].title);
+                     foundSystems[j].games.splice(k, 1);
+                     foundSystems[j].save(function(err, savedSystem){
+                     });
+                  }
+                  // foundSystems[j].games[k].id(req.params.id).remove();
+               }
             }
+         }
+         // console.log('req.params.id',req.params.id,'%%%%foundSystems',foundSystems[0].games);
+         // });
+         res.redirect('/games');
+      });
+   });
+});
+         // for (var i = 0; i < foundSystems.length; i++) {
+            // for (var j = 0; j < foundSystems[i].games.length; j++) {
+            // console.log('******',foundSystems[i],'******');
+            // console.log('foundSystems');
+            // console.log('>>>>>>',foundSystems[i].games[j],'<<<<<<');
+            // console.log('games');
+            // console.log('^^^^^^',foundSystems[i].games[j].title,'^^^^^^');
+            // console.log(req.params.id);
+            // }
             // foundSystems[i].games.id(req.params.id).remove();
             // foundSystems.save(function(err, savedSystem){
             // });
-         }
-      });
-         // res.redirect('/games');
-   });
-});
-
+         // }
 
 
 

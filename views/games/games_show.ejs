@@ -23,10 +23,10 @@
       <section>
          <h3>available on:</h3>
          <% if(systemsArr.length === 1){ %>
-               <a href="/systems/<%=systemsArr[0]._id;%>"><img src="<%=systemsArr[0].logo;%>" alt=""></a>
+               <a href="/systems/<%=systemsArr[0]._id;%>"><img class="logo" src="<%=systemsArr[0].logo;%>" alt=""></a>
          <% } else { %>
             <% for(var i = 0; i < systemsArr.length; i++) { %>
-               <a href="/systems/<%=systemsArr[i]._id;%>"><img src="<%=systemsArr[i].logo;%>" alt=""></a>
+               <a href="/systems/<%=systemsArr[i]._id;%>"><img class="logo" src="<%=systemsArr[i].logo;%>" alt=""></a>
             <% } %>
          <% } %>
       </section>

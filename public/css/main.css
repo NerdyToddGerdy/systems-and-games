@@ -11,6 +11,7 @@ body{
 }
 h1{
    margin: 0;
+   font-size: 2em;
 }
 .index-main img {
     width: 75%;
@@ -18,7 +19,23 @@ h1{
 .pages > a{
    color: green;
 }
-span#title-span {
-
-    color: #ca9e6a;
+.logo{
+   width: 15%;
+   border-radius: 10px;
+}
+#title-span {
+   color: #ca9e6a;
+}
+#title{
+   text-decoration: none;
+}
+#slogan{
+   color: silver;
+   margin: 0;
+}
+#slogan-span{
+   color: green;
+}
+.page-links{
+   padding: 0 3%;
 }
