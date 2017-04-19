@@ -19,9 +19,9 @@
             Systems:
                <!-- <select name="systemId"> -->
                <% for(var i = 0; i < systemsArr.length; i++){ %>
-                     <label for="systemId"><%=systemsArr[i].name%>
                         <input type="checkbox" name="systems" value="<%=systemsArr[i]._id%>">
-                     </label>
+                        <label for="systemId"><%=systemsArr[i].name%>
+                        </label> <br/>
                <% } %>
             <!-- </select> -->
                <input type="submit" name="" value="Add Game">

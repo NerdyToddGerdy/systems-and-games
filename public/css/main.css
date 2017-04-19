@@ -1,10 +1,24 @@
 nav {
    background-color: #1d1c28;
    color: white;
+   height: 6em;
+   font-family: 'Audiowide', cursive;
 }
 body{
-   margin: 0;
+   background-color: #36373e;
+   color: silver;
+   text-align: center;
 }
 h1{
    margin: 0;
+}
+.index-main img {
+    width: 75%;
+}
+.pages > a{
+   color: green;
+}
+span#title-span {
+
+    color: #ca9e6a;
 }
