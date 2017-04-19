@@ -51,7 +51,7 @@ router.get('/:id', function(req, res){ //games_show route
                // console.log(foundGame._id);
                if (System.findById(foundGame.systems[i])){
                   newSysArr.push(foundSystem[i]);
-                  console.log(newSysArr._id);
+                  console.log(newSysArr[i].id);
                }
             }
          }
@@ -131,16 +131,20 @@ router.post('/', function(req, res){
 //----------------------------------------------------------------
 
 router.delete('/:id', function(req, res){
-   System.find({}, function(err, foundSystem){
+   System.find({}, function(err, foundSystems){
       Game.findByIdAndRemove(req.params.id, function(err, foundGame){
-         for (var i = 0; i < foundSystem.length; i++) {
-            console.log('******',foundSystem[i],'******');
-            console.log('foundSystem');
-            console.log('>>>>>>',foundSystem[i].games,'<<<<<<');
+         for (var i = 0; i < foundSystems.length; i++) {
+            for (var j = 0; j < foundSystems[i].games.length; j++) {
+            console.log('******',foundSystems[i],'******');
+            console.log('foundSystems');
+            console.log('>>>>>>',foundSystems[i].games[j],'<<<<<<');
             console.log('games');
-            console.log('^^^^^^',foundSystem[i].games.id(req.params.id),'^^^^^^');
-            // foundSystem[i].games.id(req.params.id).remove();
-            // foundSystem.save(function(err, savedSystem){
+            console.log('^^^^^^',foundSystems[i].games[j].title,'^^^^^^');
+            console.log(req.params.id);
+
+            }
+            // foundSystems[i].games.id(req.params.id).remove();
+            // foundSystems.save(function(err, savedSystem){
             // });
          }
       });
