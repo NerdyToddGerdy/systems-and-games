@@ -23,7 +23,7 @@ router.get('/new', function(req, res){
    });
 });
 
-router.get('/:id', function(req, res){
+router.get('/:id', function(req, res){ //games_show route
    var newArr = [];
    var newSysArr = [];
    System.find({}, function(err, foundSystem){
@@ -124,19 +124,27 @@ router.post('/', function(req, res){
       });
    });
 });
+
+
 //----------------------------------------------------------------
                         //Delete Routes
 //----------------------------------------------------------------
+
 router.delete('/:id', function(req, res){
    System.find({}, function(err, foundSystem){
       Game.findByIdAndRemove(req.params.id, function(err, foundGame){
          for (var i = 0; i < foundSystem.length; i++) {
-            foundSystem[i].games.id(req.params.id).remove();
+            console.log('******',foundSystem[i],'******');
+            console.log('foundSystem');
+            console.log('>>>>>>',foundSystem[i].games,'<<<<<<');
+            console.log('games');
+            console.log('^^^^^^',foundSystem[i].games.id(req.params.id),'^^^^^^');
+            // foundSystem[i].games.id(req.params.id).remove();
+            // foundSystem.save(function(err, savedSystem){
+            // });
          }
       });
-      foundSystem.save(function(err, savedSystem){
-         res.redirect('/games');
-      });
+         // res.redirect('/games');
    });
 });
 
