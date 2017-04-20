@@ -20,13 +20,34 @@ h1{
    font-size: 2em;
 }
 
+img{
+   width: 100%;
+   margin: 0;
+}
 
 a {
    color: green;
 }
+.systems{
+   display: flex;
+   justify-content: space-around;
+   margin:0;
+   align-items: center;
+}
+.games{
+   display: flex;
+   justify-content: space-around;;
+   align-items: center;
+}
 
-.index-main img {
-    width: 75%;
+.index-main{
+   /*width: 100%;*/
+   /*display: inline;*/
+}
+
+.index-img{
+    width: 74%;
+    margin-right: 0;
 }
 .pages > a{
    color: green;
@@ -39,8 +60,21 @@ a {
    width: 75%;
 }
 
+.system-txt{
+   width: 25%;
+}
+
 .listed-items{
    padding-bottom: 1em;
+}
+.system-img{
+   display: inline-block;
+   width: 24%
+}
+
+.index-txt{
+width: 25%;
+background-color: #ca9e6a
 }
 
 #title-span {
