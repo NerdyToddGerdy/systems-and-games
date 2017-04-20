@@ -143,11 +143,20 @@ router.put('/:id', function(req,res){
    Game.findByIdAndUpdate(req.params.id, req.body, function(err, updatedGame){
       System.find({}, function(err, foundSystems){
          for (var i = 0; i < foundSystems.length; i++) {
-            console.log(foundSystems[i],' foundSystems ===');
-            console.log(req.body, 'req.body+++++++++');
+            console.log(foundSystems[i].games[0].title,' foundSystems ===');
+            console.log(updatedGame.title);
+            for (var j = 0; j < foundSystems[i].games.length; j++) {
+               if (foundSystems[i].games[j].title == updatedGame.title) {
+                  console.log('they match');
+                  foundSystems[i].games.splice(j,1);
+                  console.log(foundSystems[i].games[j]);
+                  foundSystems[i].games.push(updatedGame);
+                  foundSystems[i].save(function(err, savedFoundSystems){});
+               }
+            }
          }
       });
-      // res.redirect('/systems');
+      res.redirect('/games/');
    });
 });
 
@@ -169,7 +178,7 @@ router.delete('/:id', function(req, res){
                   for (var k = 0; k < foundSystems[j].games.length; k++) {
                      console.log('+++++++++++++++++++++++++++++++++++++++++++',foundSystems[j].games[k]);
                      console.log('-------------------------------------------',foundSystems[j].games[k].title);
-                     foundSystems[j].games.splice(k, 1);
+                     foundSystems[j].games.splice(j, 1);
                      foundSystems[j].save(function(err, savedSystem){
                      });
                   }
