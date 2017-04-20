@@ -1,18 +1,30 @@
 nav {
+   position: fixed;
    background-color: #1d1c28;
    color: white;
    height: 6em;
    font-family: 'Audiowide', cursive;
+   width: 100%;
+   top: 0;
+   left: 0;
 }
 body{
+   margin-top: 6em;
    background-color: #36373e;
    color: silver;
    text-align: center;
+   font-family: 'Audiowide', cursive;
 }
 h1{
    margin: 0;
    font-size: 2em;
 }
+
+
+a {
+   color: green;
+}
+
 .index-main img {
     width: 75%;
 }
@@ -23,6 +35,14 @@ h1{
    width: 15%;
    border-radius: 10px;
 }
+.systems-index{
+   width: 75%;
+}
+
+.listed-items{
+   padding-bottom: 1em;
+}
+
 #title-span {
    color: #ca9e6a;
 }
@@ -38,4 +58,20 @@ h1{
 }
 .page-links{
    padding: 0 3%;
+}
+
+.stats {
+    text-align: left;
+}
+
+.logo-n-name{
+   text-align: left;
+}
+
+.system-show-img{
+
+}
+
+li {
+   list-style: none;
 }

@@ -38,3 +38,24 @@ systems: []
                   <% for(i = 0; i < systemsArr.length; i++){ %>
                      <option value="<%=systemsArr[i].id%>"><%=systemsArr[i].name%></option>
                   <% } %>
+
+
+
+
+
+                  <!-- <select name="systemId"> -->
+                  <% for(var i = 0; i < systemsArr.length; i++){ %>
+                           <input type="checkbox" name="systems" value="<%=systemsArr[i]._id%>">
+                           <label for="systemId"><%=systemsArr[i].name%>
+                           </label> <br/>
+                  <% } %>
+               <!-- </select> -->
+
+
+               <input type="checkbox" name="systems" value="<%=systemsArr[i]._id%>"
+               <% if(gamesArr.systems[j] == systemsArr[i].id){ %>
+                  checked
+                  <% } %>
+                  />
+               <label for="systemId"><%=systemsArr[i].name%>
+               </label> <br/>

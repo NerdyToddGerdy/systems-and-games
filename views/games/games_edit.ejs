@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <% include ../partials/head %>
+   </head>
+   <body>
+      <header>
+         <nav>
+            <% include ../partials/nav %>
+         </nav>
+      </header>
+      <main>
+         <h1>Edit this game's information</h1>
+         <form class="edit-game" action="/games/<%=gamesArr._id%>?_method=PUT" method="post">
+            Title: <input type="text" name="title" value="<%=gamesArr.title%>"><br/>
+            Release Date: <input type="text" name="releaseDate" value="<%=gamesArr.releaseDate%>"><br/>
+            Genre: <input type="text" name="genre" value="<%=gamesArr.genre%>"><br/>
+            MSRP: <input type="text" name="msrp" value="<%=gamesArr.msrp%>"><br/>
+            Image: <input type="text" name="img" value="<%=gamesArr.img%>"></br>
+            Systems:<br/>
+               <% var possibleArr = []; %>
+               <% for(var i = 0; i < systemsArr.length; i++){ %>
+                  <% for(var j = 0; j < gamesArr.systems.length; j++){ %>
+                     <% console.log(gamesArr.systems[j],j,"gamesArr") %>
+                     <% console.log(systemsArr[i].id,i,"systemsArr") %>
+                     <% console.log(gamesArr.systems[j] == systemsArr[i].id) %>
+                     <% if(gamesArr.systems[j] == systemsArr[i].id){ %>
+                        <input type="checkbox" name="systems" value="<%=systemsArr[i]._id%>" checked/>
+                        <label for="systemId"><%=systemsArr[i].name%>
+                        </label> <br/>
+                        <!-- <h1>here</h1> -->
+                     <% } else { %>
+                        <% possibleArr.push(systemsArr[i]); %>
+                        <% for(var j = 0; j < possibleArr.length; j++){ %>
+                           <% if(possibleArr[j].name !== systemsArr[i].name){ %>
+                              <input type="checkbox" name="systems" value="<%=systemsArr[i]._id%>" />
+                              <label for="systemId"><%=systemsArr[i].name%>
+                              </label> <br/>
+                              <!-- <h1>here</h1> -->
+                              <% } %>
+                           <% } %>
+                     <% } %>
+                  <% } %>
+               <% } %>
+               <!-- if(possibleArr.name !== systemsArr.name) -->
+               <input type="submit" name="" value="Edit Game">
+         </form>
+         //add a system
+      </main>
+   </body>
+</html>

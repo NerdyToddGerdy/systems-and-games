@@ -64,6 +64,17 @@ router.get('/:id', function(req, res){ //games_show route
    });
 });
 
+router.get('/edit/:id', function(req, res){
+   Game.findById(req.params.id, function(err, foundGame){
+      System.find({}, function(err, foundSystems){
+         res.render('games/games_edit.ejs', {
+            gamesArr: foundGame,
+            systemsArr:foundSystems
+         });
+      });
+   });
+});
+
 //----------------------------------------------------------------
                         //Post Routes
 //----------------------------------------------------------------
@@ -122,6 +133,21 @@ router.post('/', function(req, res){
          }
          res.redirect('/games');
       });
+   });
+});
+
+//----------------------------------------------------------------
+                        //Put Routes
+//----------------------------------------------------------------
+router.put('/:id', function(req,res){
+   Game.findByIdAndUpdate(req.params.id, req.body, function(err, updatedGame){
+      System.find({}, function(err, foundSystems){
+         for (var i = 0; i < foundSystems.length; i++) {
+            console.log(foundSystems[i],' foundSystems ===');
+            console.log(req.body, 'req.body+++++++++');
+         }
+      });
+      // res.redirect('/systems');
    });
 });
 

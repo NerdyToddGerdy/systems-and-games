@@ -13,6 +13,7 @@
          <h1><%=gamesArr.title%></h1>
          <img src="<%=gamesArr.img%>" alt="">
       </section>
+      <hr>
       <section>
          <h2>Stats</h2>
          <h3>Title: <%=gamesArr.title%></h3>
@@ -20,8 +21,10 @@
          <h3>Genre: <%=gamesArr.genre%></h3>
          <h3>MSRP: <%=gamesArr.msrp%></h3>
       </section>
+      <a  href="/games/edit/<%=gamesArr._id%>">Edit this page</a>
+      <hr>
       <section>
-         <h3>available on:</h3>
+         <h3>Available On:</h3>
          <% if(systemsArr.length === 1){ %>
                <a href="/systems/<%=systemsArr[0]._id;%>"><img class="logo" src="<%=systemsArr[0].logo;%>" alt=""></a>
          <% } else { %>

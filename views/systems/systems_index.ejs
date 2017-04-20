@@ -8,18 +8,18 @@
          <% include ../partials/nav %>
       </nav>
       <main>
-         <a href="/"><h2>🔙</h2></a>
          <h1>List of systems</h1>
+         <a href="/systems/new">Add another system</a>
          <ul>
             <% for(var i = 0; i < systemsArr.length; i++){ %>
-               <li>
-                  <a href="/systems/<%=systemsArr[i]._id;%>"><img src="<%=systemsArr[i].img;%>" alt=""><br/>
+               <li class="listed-items">
+                  <a href="/systems/<%=systemsArr[i]._id;%>"><img  class="systems-index" src="<%=systemsArr[i].img;%>" alt=""><br/>
                      <%=systemsArr[i].name%>
                   </a>
                </li>
             <% } %>
          </ul>
-         <a href="/systems/new">Add another system</a>
+
       </main>
    </body>
 </html>
