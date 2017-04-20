@@ -20,34 +20,35 @@ h1{
    font-size: 2em;
 }
 
-img{
+/*img{
    width: 100%;
    margin: 0;
-}
+}*/
 
 a {
    color: green;
 }
 .systems{
    display: flex;
-   justify-content: space-around;
-   margin:0;
+   justify-content: space-between;;
+   /*height: 100%;*/
    align-items: center;
+   background: #ca9e6a;
+   box-shadow: inset 0 -5px #36373e;
 }
 .games{
    display: flex;
-   justify-content: space-around;;
-   align-items: center;
-}
-
-.index-main{
-   /*width: 100%;*/
-   /*display: inline;*/
+   justify-content: space-between;
+   /*align-items: center;*/
+   background: green;
+   box-shadow: inset 0 -5px #36373e;
+   height: auto;
 }
 
 .index-img{
-    width: 74%;
-    margin-right: 0;
+    height: auto;
+    margin-left: 0;
+    width: 75%;
 }
 .pages > a{
    color: green;
@@ -67,14 +68,26 @@ a {
 .listed-items{
    padding-bottom: 1em;
 }
-.system-img{
-   display: inline-block;
-   width: 24%
-}
 
 .index-txt{
-width: 25%;
-background-color: #ca9e6a
+   /*display: block;*/
+   width: 25%;
+   /*height: 100%;*/
+   align-self: center;
+   /*background-color: #ca9e6a;*/
+}
+.index-txt > h3{
+   color:#1d1c28;
+}
+
+.game-txt{
+   /*display: block;*/
+   width: 25%;
+   /*height: 100%;*/
+   align-self: center;
+}
+.game-txt > h3 {
+   color: #1d1c28;
 }
 
 #title-span {
@@ -90,6 +103,11 @@ background-color: #ca9e6a
 #slogan-span{
    color: green;
 }
+
+#add-a-game-txt{
+   color: #ca9e6a;
+}
+
 .page-links{
    padding: 0 3%;
 }
