@@ -28,12 +28,13 @@ h1{
 a {
    color: green;
 }
+
 .systems{
    display: flex;
    justify-content: space-between;;
    /*height: 100%;*/
    align-items: center;
-   background: #ca9e6a;
+   background: #b77021;
    box-shadow: inset 0 -5px #36373e;
 }
 .games{
@@ -74,9 +75,10 @@ a {
    width: 25%;
    /*height: 100%;*/
    align-self: center;
-   /*background-color: #ca9e6a;*/
+   /*background-color: ##b77021;*/
 }
 .index-txt > h3{
+   font-size: 3em;
    color:#1d1c28;
 }
 
@@ -88,10 +90,11 @@ a {
 }
 .game-txt > h3 {
    color: #1d1c28;
+   font-size: 3em;
 }
 
 #title-span {
-   color: #ca9e6a;
+   color: #b77021;
 }
 #title{
    text-decoration: none;
@@ -105,7 +108,7 @@ a {
 }
 
 #add-a-game-txt{
-   color: #ca9e6a;
+   color: #b77021;
 }
 
 .page-links{
@@ -121,7 +124,7 @@ a {
 }
 
 .system-show-img{
-
+width: 75%;
 }
 
 li {

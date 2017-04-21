@@ -59,3 +59,31 @@ systems: []
                   />
                <label for="systemId"><%=systemsArr[i].name%>
                </label> <br/>
+
+
+
+
+               <% var possibleArr = []; %>
+               <% for(var i = 0; i < systemsArr.length; i++){ %>
+                  <% console.log(systemsArr[i].id,i,"systemsArr") %>
+                  <% for(var j = 0; j < gamesArr.systems.length; j++){ %>
+                     <% console.log(gamesArr.systems[j],j,"gamesArr") %>
+                     <% console.log(gamesArr.systems[j] == systemsArr[i].id) %>
+                     <% if(gamesArr.systems[j] == systemsArr[i].id){ %>
+                        <input type="checkbox" name="systems" value="<%=systemsArr[i]._id%>" checked/>
+                        <label for="systemId"><%=systemsArr[i].name%>
+                        </label> <br/>
+                        <!-- <h1>here</h1> -->
+                     <% } else { %>
+                        <% possibleArr.push(systemsArr[i]); %>
+                        <% for(var j = 0; j < possibleArr.length; j++){ %>
+                           <% if(possibleArr[j].name !== systemsArr[i].name){ %>
+                              <input type="checkbox" name="systems" value="<%=systemsArr[i]._id%>" />
+                              <label for="systemId"><%=systemsArr[i].name%>
+                              </label> <br/>
+                              <!-- <h1>here</h1> -->
+                              <% } %>
+                           <% } %>
+                     <% } %>
+                  <% } %>
+               <% } %>

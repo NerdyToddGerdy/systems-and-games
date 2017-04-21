@@ -19,7 +19,7 @@
             Systems:
                <!-- <select name="systemId"> -->
                <% for(var i = 0; i < systemsArr.length; i++){ %>
-                        <input type="checkbox" name="systems" value="<%=systemsArr[i]._id%>">
+                        <input class="checkbox" type="checkbox" name="systems" value="<%=systemsArr[i]._id%>">
                         <label for="systemId"><%=systemsArr[i].name%>
                         </label> <br/>
                <% } %>

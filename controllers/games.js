@@ -29,7 +29,7 @@ router.get('/:id', function(req, res){ //games_show route
    System.find({}, function(err, foundSystem){
       // console.log(foundSystem);
       Game.findById(req.params.id, function(err, foundGame){
-         console.log(foundGame.systems);
+         // console.log(foundGame.systems);
          if (foundGame.systems.length < 2) {
             for (var j = 0; j < foundSystem.length; j++) {
                // console.log('%%%%%%%%%%%%%%%%%%%%');
@@ -39,9 +39,9 @@ router.get('/:id', function(req, res){ //games_show route
                if (foundSystem[j]._id == foundGame.systems[0]){
                   // console.log('yes');
                   // console.log(foundSystem[j]);
-                  console.log('only one system');
+                  // console.log('only one system');
                   newSysArr = [foundSystem[j]];
-                  console.log(newSysArr);
+                  // console.log(newSysArr);
                }
             }
                // console.log(newArr[i] + 'this');
@@ -51,7 +51,7 @@ router.get('/:id', function(req, res){ //games_show route
                // console.log(foundGame._id);
                if (System.findById(foundGame.systems[i])){
                   newSysArr.push(foundSystem[i]);
-                  console.log(newSysArr[i].id);
+                  // console.log(newSysArr[i].id);
                }
             }
          }
@@ -141,17 +141,20 @@ router.post('/', function(req, res){
 //----------------------------------------------------------------
 router.put('/:id', function(req,res){
    Game.findByIdAndUpdate(req.params.id, req.body, function(err, updatedGame){
+      console.log(updatedGame,"*******************", req.body);
       System.find({}, function(err, foundSystems){
          for (var i = 0; i < foundSystems.length; i++) {
-            console.log(foundSystems[i].games[0].title,' foundSystems ===');
-            console.log(updatedGame.title);
+            // console.log(foundSystems[i].games[0].title,' foundSystems ===');
+            // console.log(updatedGame.title);
             for (var j = 0; j < foundSystems[i].games.length; j++) {
+               // console.log(foundSystems[i]);
                if (foundSystems[i].games[j].title == updatedGame.title) {
-                  console.log('they match');
-                  foundSystems[i].games.splice(j,1);
-                  console.log(foundSystems[i].games[j]);
-                  foundSystems[i].games.push(updatedGame);
+                  // console.log('they match');
+                  foundSystems[i].games.splice(j,1,req.body);
+                  // console.log(foundSystems[i].games[j]);
                   foundSystems[i].save(function(err, savedFoundSystems){});
+                  // foundSystems[i].games.push(updatedGame);
+                  // foundSystems[i].save(function(err, savedFoundSystems){});
                }
             }
          }
