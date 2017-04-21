@@ -27,3 +27,4 @@ https://nerdygerdy.herokuapp.com/
 - Improve the CSS3
 - Add Ajax to search for systems and games
 - Add small description of game to the games model
+- Adjust the CSS to work better with mobile
