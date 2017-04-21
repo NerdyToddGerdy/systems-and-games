@@ -10,23 +10,26 @@
          </nav>
       </header>
       <main>
+         <h2>Create a new system</h2>
          <form class="new-game" action="/games" method="post">
-            Title: <input type="text" name="title" value="*required*"><br/>
-            Release Date: <input type="text" name="releaseDate" value=""><br/>
-            Genre: <input type="text" name="genre" value=""><br/>
-            MSRP: <input type="text" name="msrp" value=""><br/>
-            Image: <input type="text" name="img" value="*required*"></br>
-            Systems:
+            <label> Title:</label> <input type="text" name="title" value="*required*"><br/>
+            <label> Release Date:</label> <input type="text" name="releaseDate" value=""><br/>
+            <label> Genre:</label> <input type="text" name="genre" value=""><br/>
+            <label> MSRP:</label> <input type="text" name="msrp" value=""><br/>
+            <label> Image:</label> <input type="text" name="img" value="*required*"></br>
+            <label> Systems:</label><br>
                <!-- <select name="systemId"> -->
                <% for(var i = 0; i < systemsArr.length; i++){ %>
-                        <input class="checkbox" type="checkbox" name="systems" value="<%=systemsArr[i]._id%>">
-                        <label for="systemId"><%=systemsArr[i].name%>
-                        </label> <br/>
+                  <label for="systemId"><%=systemsArr[i].name%>
+                  </label>
+                  <input class="checkbox" type="checkbox" name="systems" value="<%=systemsArr[i]._id%>">
+                  <br/>
                <% } %>
             <!-- </select> -->
                <input type="submit" name="" value="Add Game">
          </form>
-         //add a system
+         <!-- //add a system -->
+         <img class="ghost-pacman" src="https://static.giantbomb.com/uploads/square_small/8/87790/2469743-orange.png" alt="">
       </main>
    </body>
 </html>

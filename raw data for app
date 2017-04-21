@@ -1,32 +1,33 @@
-name: Xbox One
-
-brand: Microsoft
-
-releaseDate: November 22, 2013
-
-logo: http://www.popsci.com/sites/popsci.com/files/styles/large_1x_/public/xboxone_rgbko_stacked.jpg?itok=rzRSTtgp&fc=50,50
-
+name: Switch
+brand: Nintendo
+releaseDate: March 3, 2017
+logo: https://upload.wikimedia.org/wikipedia/commons/3/38/Nintendo_switch_logo.png
 img:
-http://compass.xbox.com/assets/2d/0c/2d0c0efa-7d89-4969-b74d-214126888908.jpg?n=Xbox_Console_MeetOne_DESKTOP_ImageModule_XBOXONE.jpg
-
+http://cdn.hiconsumption.com/wp-content/uploads/2016/10/Nintendo-Switch-010.jpg
 games:
-
-   <a href="/systems/<%=systemsArr._id%>"><img src="<%=systemsArr.logo%>" alt=""></a>
 
 
 Game
-
-title: Tom Clancy's The Division
-
-releaseDate: 8 March 2016
-
-Genre: Action role-playing
-
-msrp: RP
-
-Image: https://upload.wikimedia.org/wikipedia/en/0/03/The_Division_box.jpg
-
+title: The Legend of Zelda: Breath of the Wild
+releaseDate: March 3, 2017
+Genre: Action-adventure
+msrp: E
+Image: http://www.hardcoregamer.com/wp-content/uploads/2017/02/BotWGSPreorderPoster.jpg
 systems: []
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <label for="systems"> <%=sytemsArr[i].name%>

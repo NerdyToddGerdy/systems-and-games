@@ -12,21 +12,43 @@
       <main>
          <h1>Edit this game's information</h1>
          <form class="edit-game" action="/games/<%=gamesArr._id%>?_method=PUT" method="post">
-            Title: <input type="text" name="title" value="<%=gamesArr.title%>"><br/>
-            Release Date: <input type="text" name="releaseDate" value="<%=gamesArr.releaseDate%>"><br/>
-            Genre: <input type="text" name="genre" value="<%=gamesArr.genre%>"><br/>
-            MSRP: <input type="text" name="msrp" value="<%=gamesArr.msrp%>"><br/>
-            Image: <input type="text" name="img" value="<%=gamesArr.img%>"></br>
-            Systems:<br/>
-               find alll systems
-               make all systems 
-
-
-
+            <label>Title: </label><input class="inputs" type="text" name="title" value="<%=gamesArr.title%>"><br/>
+            <label>Release Date: </label><input class="inputs" type="text" name="releaseDate" value="<%=gamesArr.releaseDate%>"><br/>
+            <label>Genre: </label><input class="inputs" type="text" name="genre" value="<%=gamesArr.genre%>"><br/>
+            <label>MSRP: </label><input class="inputs" type="text" name="msrp" value="<%=gamesArr.msrp%>"><br/>
+            <label>Image: </label><input class="inputs" type="text" name="img" value="<%=gamesArr.img%>"></br>
+            <label>Systems:</label><br/>
+               <% var possibleArr = []; %>
+               <% for(var i = 0; i < systemsArr.length; i++){ %>
+                  <% console.log(systemsArr[i].id,i,"systemsArr") %>
+                  <% for(var j = 0; j < gamesArr.systems.length; j++){ %>
+                     <% console.log(gamesArr.systems[j],j,"gamesArr") %>
+                     <% console.log(gamesArr.systems[j] == systemsArr[i].id) %>
+                     <% if(gamesArr.systems[j] == systemsArr[i].id){ %>
+                        <label for="systemId"><%=systemsArr[i].name%>
+                        </label>
+                        <input type="checkbox" name="systems" value="<%=systemsArr[i]._id%>" checked/>
+                         <br/>
+                        <!-- <h1>here</h1> -->
+                        <% } else { %>
+                           <% possibleArr.push(systemsArr[i]); %>
+                           <% for(var j = 0; j < possibleArr.length; j++){ %>
+                              <% if(possibleArr[j].name !== systemsArr[i].name){ %>
+                                 <label for="systemId"><%=systemsArr[i].name%>
+                                 </label>
+                                 <input type="checkbox" name="systems" value="<%=systemsArr[i]._id%>" />
+                                  <br/>
+                                 <!-- <h1>here</h1> -->
+                                 <% } %>
+                              <% } %>
+                     <% } %>
+                  <% } %>
+               <% } %>
                <!-- if(possibleArr.name !== systemsArr.name) -->
-               <input type="submit" name="" value="Edit Game">
+               <br><input type="submit" name="" value="Edit Game">
          </form>
-         //add a system
+         <!-- //add a system -->
+         <img class="pikachu" src="http://vignette2.wikia.nocookie.net/pokemon/images/b/b1/025Pikachu_XY_anime_3.png/revision/latest?cb=20140902050035" alt="">
       </main>
    </body>
 </html>

@@ -10,14 +10,16 @@
          </nav>
       </header>
       <main>
+         <h2>Edit this system</h2>
          <form class="edit-system" action="/systems/<%=systemsArr._id%>?_method=PUT" method="post">
-            Name: <input type="text" name="name" value="<%=systemsArr.name%>"><br/>
-            Brand: <input type="text" name="brand" value="<%=systemsArr.brand%>"><br/>
-            Release Date: <input type="text" name="releaseDate" value="<%=systemsArr.releaseDate%>"><br/>
-            Logo: <input type="text" name="logo" value="<%=systemsArr.logo%>"><br/>
-            Image: <input type="text" name="img" value="<%=systemsArr.img%>"><br/>
+            <label>Name:</label> <input type="text" name="name" value="<%=systemsArr.name%>"><br/>
+            <label>Brand:</label> <input type="text" name="brand" value="<%=systemsArr.brand%>"><br/>
+            <label>Release Date:</label> <input type="text" name="releaseDate" value="<%=systemsArr.releaseDate%>"><br/>
+            <label>Logo:</label> <input type="text" name="logo" value="<%=systemsArr.logo%>"><br/>
+            <label>Image:</label> <input type="text" name="img" value="<%=systemsArr.img%>"><br/>
             <input type="submit" name="" value="Edit System">
          </form>
+         <img id="mario" src="http://img1.wikia.nocookie.net/__cb20131216001622/fantendo/images/0/04/Retro_mario.png" alt="Mario">
       </main>
    </body>
 </html>

@@ -14,12 +14,60 @@ body{
    color: silver;
    text-align: center;
    font-family: 'Audiowide', cursive;
+   width: 100%;
+   /*height: 850px;*/
 }
+
 h1{
    margin: 0;
    font-size: 2em;
 }
 
+label{
+    display: inline-block;
+    /*float: left;*/
+    clear: left;
+    width: 122px;
+    text-align: right;
+    padding: 0px 7px;
+}
+input {
+  display: inline-block;
+  /*float: left;*/
+}
+
+.inputs{
+   padding: 0 11px;
+}
+
+img.pikachu {
+    position: absolute;
+    bottom: 1%;
+    left: 28%;
+}
+
+img#mario {
+    position: absolute;
+    top: 40%;
+    left: -4%;
+}
+
+img.master-chief {
+    position: absolute;
+    top: 22%;
+    right: -23%;
+}
+
+img.ghost-pacman {
+    position: absolute;
+    top: 1%;
+    right: 15%;
+    z-index: -1;
+}
+
+form{
+   margin: 0 auto;
+}
 /*img{
    width: 100%;
    margin: 0;
@@ -91,6 +139,12 @@ a {
 .game-txt > h3 {
    color: #1d1c28;
    font-size: 3em;
+}
+
+inputs{
+   position: relative;
+   display: inline;
+
 }
 
 #title-span {
